@@ -1,0 +1,49 @@
+.dashboardLayout {
+  overflow: hidden;
+  &__sidebar {
+    display: none;
+  }
+  &__body {
+    overflow: hidden auto;
+    width: 100%;
+  }
+  &__children {
+    overflow: hidden auto;
+    &--phoneVerified {
+      overflow: hidden auto;
+      height: calc(100dvh - 60px);
+    }
+    &--phoneUnverified {
+      overflow: hidden auto;
+      height: calc(100dvh - 164px);
+    }
+  }
+  @media screen and (min-width: 480px) {
+    &__children {
+      &--phoneUnverified {
+        height: calc(100dvh - 144px);
+      }
+    }
+  }
+  @media screen and (min-width: 768px) {
+    &__children {
+      &--phoneUnverified {
+        height: calc(100dvh - 149px);
+      }
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    &__sidebar {
+      display: block;
+      height: 100dvh;
+      min-width: 257px;
+      max-width: 257px;
+      background: #fcfcfc;
+      border-right: 1px solid #d9dbe9;
+    }
+    &__body {
+      background: #ffffff;
+    }
+  }
+}

@@ -1,0 +1,270 @@
+@keyframes dropDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.dashboardHeader {
+  position: relative;
+  &__activityBar {
+    width: 100%;
+    background-color: rgba(21, 21, 21, 1);
+    border-bottom: 1px solid rgba(237, 237, 237, 1);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 16px;
+    padding-left: 16px;
+    position: relative;
+    z-index: 9999;
+  }
+  &__name {
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: -2%;
+    font-size: 18px;
+    color: rgba(11, 11, 11, 1);
+    white-space: nowrap;
+    text-transform: capitalize;
+    font-family: 'MailSansRomanMedium';
+    display: none;
+  }
+  &__activePage {
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: -2%;
+    font-size: 18px;
+    color: rgba(11, 11, 11, 1);
+    white-space: nowrap;
+    font-family: 'MailSansRomanMedium';
+    display: none;
+  }
+  &__statusBar {
+    width: 100%;
+    padding: 13px;
+    background: #fff8e0;
+    border: 1px solid #fef1c4;
+    user-select: none;
+    z-index: 99998;
+    animation: dropDown 0.5s ease-out;
+    cursor: pointer;
+  }
+  &__highlight {
+    color: #191919;
+  }
+  &__statusText {
+    color: #5d5d5d;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  &__statusHighlight {
+    font-weight: 600;
+  }
+  &__alert {
+    padding: 20px 18px 0;
+  }
+  &__statusCta {
+    color: #5941a9;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    cursor: pointer;
+  }
+  &__statusCtaArrow {
+    display: inline-block;
+    transform: rotate(180deg);
+  }
+  &__left {
+    width: 60%;
+    display: flex;
+    align-items: center;
+  }
+  &__right {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  // &__hamburger {
+  //     margin-right: 10px;
+  // }
+  &__emblemItem {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.04em;
+    color: #00022f;
+    > svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  &__clickable {
+    margin-right: 16px;
+    cursor: pointer;
+    display: none;
+  }
+  &__avatar {
+    display: none;
+  }
+  &__avatarGroup {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    visibility: hidden;
+  }
+
+  &__avatarImage {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 100%;
+  }
+
+  &__avatarArrow {
+    display: inline-block;
+    transform: rotate(-90deg);
+    transition: transform 0.3s ease;
+    &--active {
+      display: inline-block;
+      transform: rotate(90deg);
+      transition: transform 0.3s ease;
+    }
+  }
+  &__options {
+    z-index: 40000000;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    min-width: 232px;
+    max-width: 232px;
+    height: fit-content;
+    border-radius: 12px;
+    padding: 8px 16px;
+    background: #fff;
+    box-shadow: 10px 25px 100px 0px rgba(0, 0, 0, 0.08);
+  }
+  &__optionsNameGroup {
+    padding: 17px 0;
+    border-bottom: 1px solid #edf2f7;
+  }
+  &__optionsTitle {
+    width: 100%;
+    margin: 0 0 4px 0;
+    color: #1a202c;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &__optionsStatus {
+    width: 100%;
+    color: #718096;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &__optionsRouteGroup {
+    padding: 20px 0;
+  }
+  &__optionsSettings {
+    display: flex;
+    align-items: center;
+    margin: 0 0 23px 0;
+    text-decoration: none;
+    color: #1a202c;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0.2px;
+  }
+  &__avaterName {
+    margin-left: 4px;
+    margin-right: 8px;
+    text-transform: capitalize;
+    font-size: 12px;
+    color: rgba(11, 11, 11, 1);
+    font-family: 'MailSansRomanMedium';
+  }
+  &__optionsExit {
+    @extend .dashboardHeader__optionsSettings;
+    margin: 0;
+    cursor: pointer;
+  }
+  &__optionsIcon {
+    margin: 0 12px 0 0;
+  }
+  &__spanBtn {
+    margin-right: 8px;
+    button {
+      padding: 8px 16px !important;
+      font-size: 12px !important;
+      letter-spacing: -2% !important;
+      white-space: nowrap;
+    }
+  }
+  @media only screen and (min-width: 1200px) {
+    &__activityBar {
+      justify-content: flex-end;
+      padding-right: 32px;
+      padding-left: 32px;
+      background: #ffffff;
+    }
+    &__name {
+      display: block;
+    }
+    &__activePage {
+      display: block;
+    }
+    &__statusText {
+      text-align: center;
+    }
+    &__left {
+      display: none;
+    }
+    &__right {
+      width: 100%;
+    }
+    &__clickable {
+      display: block;
+    }
+    &__avatarGroup {
+      visibility: visible;
+    }
+    &__avatar {
+      display: flex;
+      align-items: center;
+    }
+    &__hamburger {
+      display: none;
+    }
+    &__emblem {
+      display: none;
+    }
+    &__options {
+      position: absolute;
+      top: 60px;
+      right: 35px;
+    }
+    &__alert {
+      padding: 16px 32px 0;
+    }
+  }
+}
