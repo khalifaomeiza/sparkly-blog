@@ -1,10 +1,13 @@
+import DashboardHeader from './_partials/DashboardHeader';
+
 const Blog = () => {
 	return (
 		<div>
-			<h1>Blog Title</h1>
-			<p>This is a blog post.</p>
+			<DashboardHeader />
 		</div>
 	);
+
+
 };
 
 export default Blog;

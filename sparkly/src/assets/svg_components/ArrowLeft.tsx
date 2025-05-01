@@ -1,0 +1,34 @@
+interface ArrowLeftProps {
+	className?: string;
+}
+
+const ArrowLeft: React.FC<ArrowLeftProps> = ({}) => {
+	return (
+		<div>
+			<svg
+				width='16'
+				height='16'
+				viewBox='0 0 16 16'
+				fill='none'
+				xmlns='http://www.w3.org/2000/svg'
+			>
+				<path
+					d='M14 8H2'
+					stroke='#5D38DE'
+					strokeWidth='2'
+					strokeLinecap='round'
+					strokeLinejoin='round'
+				/>
+				<path
+					d='M7.33333 13.3333L2 8L7.33333 2.66666'
+					stroke='#5D38DE'
+					strokeWidth='2'
+					strokeLinecap='round'
+					strokeLinejoin='round'
+				/>
+			</svg>
+		</div>
+	);
+};
+
+export default ArrowLeft;
